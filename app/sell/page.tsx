@@ -17,7 +17,7 @@ export default async function Sell() {
   return (
     <>
       <section className="photo" style={{ minHeight: 940 }}>
-        <img className="bg kenburns" src="/img/bars-stack-dark.jpg" alt={t("Gold bars on a dark surface", "سبائك ذهب على سطح داكن")} style={{ objectPosition: "70% 50%" }} />
+        <img className="bg kenburns" src="/img/card-workshop.jpg" alt={t("The Melody card beside assay scales and gold bars", "بطاقة ميلودي بجانب ميزان الفحص وسبائك الذهب")} style={{ objectPosition: "60% 50%" }} />
         <div className="shade" style={{ background: "linear-gradient(90deg, rgba(44,5,9,0.95) 0%, rgba(44,5,9,0.82) 40%, rgba(44,5,9,0.25) 100%)" }} />
         <div className="wrap split" style={{ position: "relative", display: "grid", gridTemplateColumns: "1fr 470px", gap: 80, padding: "200px 0 90px", alignItems: "start" }}>
           <div style={{ paddingTop: 30 }}>

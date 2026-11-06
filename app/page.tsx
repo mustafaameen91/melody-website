@@ -3,6 +3,7 @@ import { CountUp, FadeIn, Item, ParallaxImg, Reveal, RiseLines, Stagger } from "
 import { LiveChange, LiveNum, LiveTime } from "@/components/Live";
 import { Icon } from "@/components/Icon";
 import { ProductCard } from "@/components/ProductCard";
+import { HeroSlider } from "@/components/HeroSlider";
 import { HomeChart } from "./HomeChart";
 import { ARTICLES, getProduct, productPrice } from "@/lib/data";
 import { quoteAt } from "@/lib/pricing";
@@ -16,7 +17,7 @@ export default async function Home() {
     <>
       {/* HERO */}
       <section className="photo hero grain">
-        <img className="bg kenburns" src="/img/hero-bars.jpg" alt={t("Stacked 999.9 fine gold bars", "سبائك ذهب خالص 999.9 متراصّة")} style={{ objectPosition: "70% 50%" }} />
+        <HeroSlider />
         <div className="shade" />
         <div className="wrap" style={{ position: "relative", zIndex: 2, paddingTop: "clamp(190px, 24vh, 250px)" }}>
           <FadeIn delay={0.1}><div className="eyebrow">{t("Investment gold · Baghdad", "الذهب الاستثماري · بغداد")}</div></FadeIn>
@@ -52,8 +53,8 @@ export default async function Home() {
       <section style={{ padding: "130px 0" }}>
         <div className="wrap split" style={{ display: "grid", gridTemplateColumns: "minmax(0, 560px) 1fr", gap: 90, alignItems: "center" }}>
           <Reveal className="ph zoom" style={{ height: 720 }}>
-            <img src="/img/bar-burgundy.jpg" alt={t("A cast gold bar resting on deep red", "سبيكة ذهب مصبوبة على خلفية حمراء داكنة")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-            <div className="cap">{t("Cast bar, 999.9 fine gold", "سبيكة مصبوبة، ذهب خالص 999.9")}</div>
+            <img src="/img/melody-100g-stand.jpg" alt={t("A Melody 100 g gold bar on black marble", "سبيكة ميلودي 100 غ على رخام أسود")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "66% 50%" }} />
+            <div className="cap">{t("Melody 100 g bar, 999.9 fine gold", "سبيكة ميلودي 100 غ، ذهب خالص 999.9")}</div>
           </Reveal>
           <div>
             <Reveal><div className="eyebrow">{t("Three ways to own gold", "ثلاث طرق لامتلاك الذهب")}</div></Reveal>
@@ -142,7 +143,7 @@ export default async function Home() {
       {/* PRIVATE CLIENTS */}
       <section style={{ padding: "140px 0 0" }}>
         <Reveal className="wrap split" style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", background: "var(--paper)", border: "1px solid var(--rule)" }}>
-          <div className="ph zoom" style={{ minHeight: 600 }}><img src="/img/office-private.jpg" alt={t("A private client room with a wooden desk", "غرفة خاصة لكبار العملاء بمكتب خشبي")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 60%" }} /></div>
+          <div className="ph zoom" style={{ minHeight: 600 }}><img src="/img/melody-showroom.jpg" alt={t("The Melody showroom at night", "صالة عرض ميلودي ليلاً")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 60%" }} /></div>
           <div className="pad-sm" style={{ padding: "80px 72px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <div className="eyebrow">{t("Private clients", "كبار العملاء")}</div>
             <h2 style={{ fontSize: 54, marginTop: 20 }}>{lang === "ar" ? <>غرفة هادئة،<br />ومستشار <em>خاص</em></> : <>A quiet room,<br />a <em>personal</em> adviser</>}</h2>
@@ -166,8 +167,8 @@ export default async function Home() {
 
       {/* CTA */}
       <section className="photo" style={{ minHeight: 520 }}>
-        <ParallaxImg src="/img/light-gold.jpg" pos="50% 30%" strength={60} />
-        <div className="shade" style={{ background: "rgba(44,5,9,0.35)" }} />
+        <ParallaxImg src="/img/card-studio.jpg" pos="50% 50%" strength={60} />
+        <div className="shade" style={{ background: "rgba(32,3,6,0.62)" }} />
         <div className="wrap" style={{ position: "relative", textAlign: "center", padding: "130px 0" }}>
           <Reveal><div className="eyebrow plain">{t("Begin today", "ابدأ اليوم")}</div></Reveal>
           <Reveal delay={0.1}><h2 style={{ fontSize: 78, marginTop: 22 }}>{t("Start with", "ابدأ")} <em className="gold-text shimmer" style={{ paddingInlineEnd: 6 }}>{t("one gram", "بغرامٍ واحد")}</em></h2></Reveal>

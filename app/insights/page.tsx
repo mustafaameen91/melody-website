@@ -22,7 +22,7 @@ export default async function Insights() {
       <section style={{ padding: "60px 0 0" }}>
         <div className="wrap">
           <Reveal className="photo zoom" style={{ minHeight: 620 }}>
-            <div className="ph" style={{ position: "absolute", inset: 0 }}><img src="/img/molten.jpg" alt={t("Molten gold surface", "سطح ذهب منصهر")} /></div>
+            <div className="ph" style={{ position: "absolute", inset: 0 }}><img src="/img/card-foundry.jpg" alt={t("The Melody card beside molten gold being poured", "بطاقة ميلودي بجانب ذهب منصهر يُسكب")} /></div>
             <div className="shade" style={{ background: "linear-gradient(90deg, rgba(44,5,9,0.95) 0%, rgba(44,5,9,0.7) 45%, rgba(44,5,9,0.05) 100%)" }} />
             <div className="inner pad-sm" style={{ position: "relative", padding: "90px 70px", maxWidth: 680 }}>
               <span className="chip" style={{ background: "var(--pale-gold)", color: "var(--maroon-deep)" }}>{t("Featured · Weekly outlook", "مختارات · النظرة الأسبوعية")}</span>

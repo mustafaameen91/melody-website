@@ -31,7 +31,7 @@ export default async function Vault() {
           </FadeIn>
 
           <Reveal className="photo" style={{ marginTop: 30, minHeight: 400 }}>
-            <img className="bg kenburns" src="/img/vault-door.jpg" alt="" style={{ objectPosition: "50% 45%", filter: "sepia(0.4)" }} />
+            <img className="bg kenburns" src="/img/card-vault.jpg" alt="" style={{ objectPosition: "50% 45%" }} />
             <div className="shade" style={{ background: "linear-gradient(90deg, rgba(74,13,22,0.98) 0%, rgba(74,13,22,0.92) 52%, rgba(74,13,22,0.55) 100%)" }} />
             <div className="inner split pad-sm" style={{ position: "relative", padding: "44px 48px", display: "grid", gridTemplateColumns: "1fr 300px", gap: 40 }}>
               <div>

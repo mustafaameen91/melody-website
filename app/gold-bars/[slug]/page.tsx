@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const REFINER_AR: Record<string, string> = { "[Refiner A]": "[المصفاة أ]", "[Refiner B]": "[المصفاة ب]", "[Refiner C]": "[المصفاة ج]" };
 
-const GALLERY = ["/img/bar-marble.jpg", "/img/bars-three.jpg", "/img/bars-fine.jpg", "/img/bar-stand.jpg", "/img/bars-stack-dark.jpg"];
+const GALLERY = ["/img/melody-bars-table.jpg", "/img/melody-100g-stand.jpg", "/img/melody-box-dark.jpg", "/img/melody-1kg-bar.jpg", "/img/melody-box-ivory.jpg"];
 
 export default async function ProductPage({ params }: Props) {
   const p = getProduct((await params).slug);

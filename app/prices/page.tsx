@@ -14,7 +14,7 @@ export default async function Prices() {
   return (
     <>
       <section className="photo" style={{ minHeight: 520 }}>
-        <img className="bg kenburns" src="/img/bars-100oz.jpg" alt={t("Fine gold bars", "سبائك ذهب خالص")} style={{ objectPosition: "50% 45%" }} />
+        <img className="bg kenburns" src="/img/melody-1kg-bar.jpg" alt={t("A Melody 1 kg gold bar", "سبيكة ميلودي 1 كغ")} style={{ objectPosition: "50% 45%" }} />
         <div className="shade" style={{ background: "linear-gradient(90deg, rgba(44,5,9,0.94) 0%, rgba(44,5,9,0.75) 45%, rgba(44,5,9,0.3) 100%)" }} />
         <div className="wrap" style={{ position: "relative", padding: "210px 0 70px", display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 30, flexWrap: "wrap" }}>
           <div>

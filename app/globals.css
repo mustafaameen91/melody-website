@@ -84,7 +84,7 @@ img { display: block; }
 .ticker .right { margin-inline-start: auto; display: flex; gap: 22px; align-items: center; }
 .hdr { background: var(--ivory); border-bottom: 1px solid var(--rule); }
 .hdr .wrap { display: flex; align-items: center; height: 92px; gap: 30px; white-space: nowrap; }
-.hdr.over { position: absolute; inset-inline-start: 0; inset-inline-end: 0; z-index: 5; background: transparent; border-bottom-color: rgba(242,201,138,0.25); color: var(--on-dark); }
+.hdr.over { position: absolute; inset-inline-start: 0; inset-inline-end: 0; z-index: 5; color: var(--on-dark); }
 .brand { display: flex; align-items: center; gap: 14px; }
 .brand-name { font-family: var(--wordmark); font-weight: 600; font-size: 27px; letter-spacing: 0.2em; color: var(--maroon); line-height: 1; }
 .hdr.over .brand-name, .ftr .brand-name { color: var(--pale-gold); }
@@ -443,14 +443,14 @@ input.input-el { border: 0; outline: 0; background: transparent; width: 100%; mi
 .btn-dark { background: linear-gradient(160deg, var(--maroon-lit) 0%, var(--maroon) 55%, var(--maroon-deep) 100%); }
 .seg span.on, .pill.on, .pager span.on, .wt a.on, .chip-maroon { background: linear-gradient(160deg, var(--maroon-lit), var(--maroon) 60%); }
 
-/* Header: dark card burgundy whenever it is not sitting over a hero photo */
-.hdr:not(.over), .hdr.scrolled {
+/* Header: always the dark card burgundy, at the top of the page and while scrolling */
+.hdr, .hdr.over {
   background: radial-gradient(120% 260% at 25% 0%, var(--maroon-lit) 0%, var(--maroon) 45%, var(--maroon-deep) 100%);
   color: var(--on-dark); border-bottom-color: var(--rule-dark);
   box-shadow: 0 10px 30px rgba(20,2,4,0.35); backdrop-filter: none; -webkit-backdrop-filter: none;
 }
-.hdr:not(.over) .brand-name, .hdr.scrolled .brand-name { color: var(--pale-gold); }
-.hdr:not(.over) .nav a.on, .hdr.scrolled .nav a.on { color: var(--pale-gold); }
+.hdr .brand-name { color: var(--pale-gold); }
+.hdr .nav a.on { color: var(--pale-gold); }
 .ftr .legal { background: rgba(14,1,3,0.9); }
 .dark, .ftr, .panel-dark, .card-surface { position: relative; }
 .mobile-menu { position: fixed; overflow-y: auto; }
@@ -496,3 +496,20 @@ html[dir="rtl"] {
 [dir="rtl"] .dark::before, [dir="rtl"] .ftr::before, [dir="rtl"] .panel-dark::before, [dir="rtl"] .card-surface::before { transform: scaleX(-1); }
 [dir="rtl"] span.num { direction: ltr; unicode-bidi: isolate; }
 [dir="rtl"] .hero h1 { line-height: 1.3; }
+
+/* Home hero photo slider */
+.hero > img.bg { transition: none; }
+.hero-slider { position: absolute; z-index: 3; inset-inline-end: max(24px, calc((100vw - 1240px) / 2)); bottom: 168px; display: flex; align-items: center; gap: 18px; color: var(--on-dark); }
+.hs-arrow { width: 44px; height: 44px; border: 1px solid rgba(242,201,138,0.45); border-radius: 22px; display: inline-flex; align-items: center; justify-content: center; color: var(--pale-gold); background: rgba(32,3,6,0.35); transition: background-color .25s, border-color .25s; }
+.hs-arrow:hover { background: rgba(32,3,6,0.7); border-color: var(--pale-gold); }
+.hs-prev { transform: rotate(180deg); }
+[dir="rtl"] .hs-prev { transform: none; }
+.hs-dots { display: flex; gap: 8px; }
+.hs-dots button { position: relative; width: 34px; height: 44px; background: none; }
+.hs-dots button::before { content: ''; position: absolute; inset-inline: 0; top: 21px; height: 2px; background: rgba(242,201,138,0.35); }
+.hs-dots button.on::before { background: rgba(242,201,138,0.55); }
+.hs-dots button span { position: absolute; inset-inline: 0; top: 21px; height: 2px; background: var(--pale-gold); transform-origin: left; }
+[dir="rtl"] .hs-dots button span { transform-origin: right; }
+.hs-dots button.on:not(:has(span))::before { background: var(--pale-gold); }
+@media (max-width: 1100px) { .hero-slider { bottom: auto; top: 150px; gap: 10px; } .hs-arrow { width: 36px; height: 36px; } }
+@media (max-width: 700px) { .hero-slider { top: 128px; } .hs-arrow { display: none; } .hs-dots button { width: 22px; } }

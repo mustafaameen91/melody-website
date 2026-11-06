@@ -15,7 +15,7 @@ export default async function GoldBars() {
   return (
     <>
       <section className="photo" style={{ minHeight: 560 }}>
-        <img className="bg kenburns" src="/img/bars-scatter.jpg" alt={t("Gold bars on a dark surface", "سبائك ذهب على سطح داكن")} />
+        <img className="bg kenburns" src="/img/melody-bars-table.jpg" alt={t("Melody minted bars with their certificates", "سبائك ميلودي المسكوكة مع شهاداتها")} />
         <div className="shade" style={{ background: "linear-gradient(90deg, rgba(44,5,9,0.95) 0%, rgba(44,5,9,0.75) 42%, rgba(44,5,9,0.2) 100%)" }} />
         <div className="wrap" style={{ position: "relative", padding: "220px 0 90px" }}>
           <FadeIn className="crumbs"><Link href="/">{t("Home", "الرئيسية")}</Link><span>/</span><span>{t("Gold bars", "سبائك الذهب")}</span></FadeIn>

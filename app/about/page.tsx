@@ -19,7 +19,7 @@ export default async function About() {
   return (
     <>
       <section className="photo" style={{ minHeight: 760 }}>
-        <img className="bg kenburns" src="/img/lobby.jpg" alt={t("A calm showroom lobby", "ردهة هادئة في صالة العرض")} style={{ objectPosition: "50% 60%" }} />
+        <img className="bg kenburns" src="/img/melody-showroom.jpg" alt={t("The Melody showroom", "صالة عرض ميلودي")} style={{ objectPosition: "50% 60%" }} />
         <div className="shade" style={{ background: "linear-gradient(90deg, rgba(44,5,9,0.92) 0%, rgba(44,5,9,0.7) 45%, rgba(44,5,9,0.15) 100%)" }} />
         <div className="wrap" style={{ position: "relative", padding: "230px 0 140px" }}>
           <FadeIn className="crumbs"><Link href="/">{t("Home", "الرئيسية")}</Link><span>/</span><span>{t("About", "من نحن")}</span></FadeIn>
@@ -51,7 +51,7 @@ export default async function About() {
           </div>
           <div style={{ position: "relative", height: 700 }} className="split-photo">
             <Reveal className="ph zoom" style={{ position: "absolute", insetInlineStart: 0, top: 0, width: "75%", height: 560 }}><img src="/img/handshake.jpg" alt={t("An adviser shaking hands with a client", "مستشار يصافح أحد العملاء")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "40% 50%" }} /></Reveal>
-            <Reveal delay={0.3} y={70} className="ph" style={{ position: "absolute", insetInlineEnd: 0, bottom: 0, width: "52%", height: 380, border: "10px solid var(--ivory)" }}><img src="/img/bars-fine.jpg" alt={t("Fine gold bars", "سبائك ذهب خالص")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 40%" }} /></Reveal>
+            <Reveal delay={0.3} y={70} className="ph" style={{ position: "absolute", insetInlineEnd: 0, bottom: 0, width: "52%", height: 380, border: "10px solid var(--ivory)" }}><img src="/img/melody-box-ivory.jpg" alt={t("A Melody bar in its presentation case", "سبيكة ميلودي في علبتها")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 40%" }} /></Reveal>
           </div>
         </div>
       </section>
