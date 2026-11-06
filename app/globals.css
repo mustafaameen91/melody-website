@@ -17,7 +17,9 @@
   --rule-dark: rgba(242,201,138,0.22);
   --up: #1F6B3B;
   --up-on-dark: #A6E3B8;
-  --serif: var(--font-serif), Georgia, serif;
+  /* Headings and figures use Montserrat, the same family as the eyebrow labels. Cormorant is kept for the MELODY wordmark only. */
+  --serif: var(--font-sans), system-ui, sans-serif;
+  --wordmark: var(--font-serif), Georgia, serif;
   --sans: var(--font-sans), system-ui, sans-serif;
   --wrap: 1240px;
 }
@@ -26,7 +28,7 @@
 html { background: var(--ivory); }
 body { margin: 0; background: var(--ivory); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.7; -webkit-font-smoothing: antialiased; font-variant-numeric: lining-nums; }
 a { color: inherit; text-decoration: none; }
-h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; margin: 0; line-height: 1.06; letter-spacing: -0.005em; }
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; margin: 0; line-height: 1.12; letter-spacing: -0.02em; }
 h1 em, h2 em, h3 em { font-style: italic; font-weight: 500; color: var(--maroon); }
 .dark h1 em, .dark h2 em, .dark h3 em, .photo h1 em, .photo h2 em { color: var(--pale-gold); }
 p { margin: 0; }
@@ -84,7 +86,7 @@ img { display: block; }
 .hdr .wrap { display: flex; align-items: center; height: 92px; gap: 30px; white-space: nowrap; }
 .hdr.over { position: absolute; inset-inline-start: 0; inset-inline-end: 0; z-index: 5; background: transparent; border-bottom-color: rgba(242,201,138,0.25); color: var(--on-dark); }
 .brand { display: flex; align-items: center; gap: 14px; }
-.brand-name { font-family: var(--serif); font-weight: 600; font-size: 27px; letter-spacing: 0.2em; color: var(--maroon); line-height: 1; }
+.brand-name { font-family: var(--wordmark); font-weight: 600; font-size: 27px; letter-spacing: 0.2em; color: var(--maroon); line-height: 1; }
 .hdr.over .brand-name, .ftr .brand-name { color: var(--pale-gold); }
 .nav { display: flex; gap: 21px; font-size: 11.5px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; }
 .nav a { position: relative; padding: 36px 0; }
@@ -237,7 +239,7 @@ a, button, .pill, .seg span, .f-opt, .add, .opt, .pay, .contact { cursor: pointe
 
 /* hero */
 .hero { height: 100vh; min-height: 1000px; max-height: 1100px; }
-.hero h1 { font-size: clamp(56px, 7.2vw, 104px); line-height: 0.98; letter-spacing: -0.01em; }
+.hero h1 { font-size: clamp(44px, 5.6vw, 82px); line-height: 1.04; letter-spacing: -0.025em; }
 .hero .shade { background: linear-gradient(90deg, rgba(46,5,9,0.94) 0%, rgba(46,5,9,0.78) 38%, rgba(46,5,9,0.18) 72%, rgba(46,5,9,0.05) 100%), linear-gradient(0deg, rgba(46,5,9,0.85) 0%, transparent 34%); }
 .line-mask { display: block; overflow: hidden; padding-bottom: 0.06em; }
 .line-mask > span { display: inline-block; }
@@ -455,15 +457,15 @@ input.input-el { border: 0; outline: 0; background: transparent; width: 100%; mi
 
 /* Wordmark with the "Digital Gold Bank" line under MELODY */
 .brand-lock { display: inline-flex; flex-direction: column; line-height: 1; }
-.brand-sub { font: 600 8.5px var(--sans); letter-spacing: 0.37em; text-transform: uppercase; color: var(--pale-gold); opacity: 0.85; margin-top: 7px; white-space: nowrap; }
-.ftr .brand-sub { font-size: 9.5px; margin-top: 8px; }
-@media (max-width: 700px) { .brand-sub { font-size: 7px; letter-spacing: 0.3em; margin-top: 5px; } }
+.brand-sub { font: 700 10.5px var(--sans); letter-spacing: 0.26em; text-transform: uppercase; color: var(--pale-gold); margin-top: 7px; white-space: nowrap; }
+.ftr .brand-sub { font-size: 11.5px; margin-top: 8px; }
+@media (max-width: 700px) { .brand-sub { font-size: 8.5px; letter-spacing: 0.2em; margin-top: 5px; } }
 
 /* ───────── Arabic, right to left ─────────
-   Latin letters and digits keep Cormorant/Montserrat so prices look the same in both languages;
+   Latin letters and digits keep Montserrat so prices look the same in both languages;
    Arabic falls through to IBM Plex Sans Arabic for both headings and text. */
 html[dir="rtl"] {
-  --serif: var(--font-serif), var(--font-ar), sans-serif;
+  --serif: var(--font-sans), var(--font-ar), sans-serif;
   --sans: var(--font-sans), var(--font-ar), system-ui, sans-serif;
 }
 [dir="rtl"] body { line-height: 1.85; }
