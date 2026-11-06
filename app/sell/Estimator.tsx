@@ -57,7 +57,7 @@ export function Estimator() {
       </AnimatePresence>
       <div className="card-surface" style={{ marginTop: 24, padding: "22px 24px", color: "var(--on-dark)" }}>
         <div className="eyebrow plain">{locked !== null ? t("Price locked", "تم تثبيت السعر") : t("We pay you today", "ندفع لك اليوم")}</div>
-        <div style={{ fontFamily: "var(--serif)", fontSize: 52, fontWeight: 600, lineHeight: 1.1, marginTop: 4 }}><Tween value={locked ?? total} format={(n) => usd(n)} className="gold-text shimmer num" /></div>
+        <div className="big-num" style={{ fontFamily: "var(--serif)", fontSize: 52, fontWeight: 600, lineHeight: 1.1, marginTop: 4 }}><Tween value={locked ?? total} format={(n) => usd(n)} className="gold-text shimmer num" /></div>
         <div className="num" style={{ fontSize: 12, color: "var(--on-dark-muted)" }}>{usd(quote.buy)} {t("per gram", "للغرام")} · {locked !== null ? <>{t("held for", "محجوز لمدة")} <span dir="ltr">{`${Math.floor(left / 60)}:${String(left % 60).padStart(2, "0")}`}</span></> : t("held for 10 minutes once locked", "يُحجز لمدة 10 دقائق بعد التثبيت")}</div>
       </div>
       <button className="btn btn-dark" style={{ width: "100%", marginTop: 18 }} onClick={lock}>{locked !== null ? t("Lock a new price", "ثبّت سعراً جديداً") : t("Lock this price", "ثبّت هذا السعر")}</button>

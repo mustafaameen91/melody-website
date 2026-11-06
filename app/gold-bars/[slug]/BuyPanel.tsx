@@ -51,7 +51,7 @@ export function BuyPanel({ slug, gallery }: { slug: string; gallery: string[] })
         <h1 style={{ fontSize: 70, marginTop: 18 }}>{name}</h1>
         <p className="muted" style={{ marginTop: 12 }}>{t("Sealed in tamper-proof packaging with its own serial number and assay certificate.", "مختومة في تغليف محكم ضد العبث، برقم تسلسلي وشهادة فحص خاصة بها.")}</p>
         <div style={{ display: "flex", alignItems: "baseline", gap: 18, marginTop: 30, padding: "26px 0", borderTop: "1px solid var(--rule)", borderBottom: "1px solid var(--rule)", flexWrap: "wrap" }}>
-          <Tween value={total} format={(n) => usd(n)} className="num serif" style={{ fontSize: "clamp(40px, 10vw, 60px)", lineHeight: 1, color: "var(--maroon)" }} />
+          <Tween value={total} format={(n) => usd(n)} className="num serif big-num" style={{ fontSize: "clamp(40px, 10vw, 60px)", lineHeight: 1, color: "var(--maroon)" }} />
           <span className="muted num">{usd(pr.perGram)} / {t("g", "غ")}</span>
           <span className="sample muted" style={{ marginInlineStart: "auto" }}>{t("SAMPLE PRICE", "سعر تجريبي")}</span>
         </div>

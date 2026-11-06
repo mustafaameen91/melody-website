@@ -17,7 +17,7 @@ export function HomeChart() {
   return (
     <div className="panel-dark" style={{ padding: "36px 40px" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 20, flexWrap: "wrap" }}>
-        <div><div className="eyebrow plain" style={{ color: "var(--on-dark-muted)" }}>{t("Gold 24K · per gram · 30 days", "ذهب عيار 24 · للغرام · 30 يوماً")}</div><div style={{ fontFamily: "var(--serif)", fontSize: 64, lineHeight: 1.1, marginTop: 6, fontWeight: 600 }}><LiveNum field="mid" className="gold-text shimmer" /></div></div>
+        <div><div className="eyebrow plain" style={{ color: "var(--on-dark-muted)" }}>{t("Gold 24K · per gram · 30 days", "ذهب عيار 24 · للغرام · 30 يوماً")}</div><div className="big-num" style={{ fontFamily: "var(--serif)", fontSize: 64, lineHeight: 1.1, marginTop: 6, fontWeight: 600 }}><LiveNum field="mid" className="gold-text shimmer" /></div></div>
         {first && <span className="num" style={{ color: diff >= 0 ? "var(--up-on-dark)" : "#F3A6A6" }}>{diff >= 0 ? "+" : "−"}{usd(Math.abs(diff))} ({((diff / first) * 100).toFixed(1)}%)</span>}
       </div>
       <div style={{ marginTop: 18, borderBottom: "1px solid var(--rule-dark)" }}><AreaChart points={pts} height={170} grid={false} /></div>

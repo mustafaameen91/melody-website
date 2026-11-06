@@ -413,15 +413,27 @@ input.input-el { border: 0; outline: 0; background: transparent; width: 100%; mi
   .stats { grid-template-columns: 1fr !important; }
   .stat { border-inline-start: 0 !important; padding-inline-start: 0 !important; }
   .sec-head { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .sec-head h2, h2 { font-size: 32px !important; }
-  h1 { font-size: 40px !important; }
-  .hero h1 { font-size: 34px !important; }
+  /* Phone type scale: titles and display figures sized for a 390px screen */
+  h1 { font-size: 32px !important; }
+  .hero h1 { font-size: 30px !important; }
+  .sec-head h2, h2 { font-size: 26px !important; }
+  h3 { font-size: 21px !important; }
+  .stat b, .pr .n, .mstep .yr { font-size: 32px; }
+  .sstep .n { font-size: 40px; }
+  .big b, .mini b { font-size: 26px; }
+  .qbox b { font-size: 24px; }
+  .ch b { font-size: 20px; }
+  .p-name { font-size: 20px; }
+  .p-foot b { font-size: 22px; }
+  .qa button { font-size: 18px; }
+  .big-num { font-size: 34px !important; }
+  .big-num.xl { font-size: 46px !important; }
   .ticker .right, .ticker .hide-sm { display: none !important; }
   .ticker .wrap { gap: 14px; overflow-x: auto; white-space: nowrap; }
   .ftr .top { grid-template-columns: 1fr 1fr; }
   .ftr .top > div:first-child { grid-column: 1 / -1; }
   .ftr .legal .wrap { flex-direction: column; height: auto; gap: 10px; padding: 18px 0; align-items: flex-start; }
-  .quote .q b { font-size: 28px; }
+  .quote .q b { font-size: 24px; }
   .way { grid-template-columns: 40px 1fr; }
   .way .link { display: none; }
   .mstep, .sstep { border-inline-start: 0 !important; padding: 0 !important; }

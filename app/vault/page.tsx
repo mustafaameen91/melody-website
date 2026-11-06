@@ -37,7 +37,7 @@ export default async function Vault() {
               <div>
                 <div style={{ display: "flex", gap: 12, alignItems: "center" }}><span className="eyebrow plain">{t("Gold held in your name", "الذهب المحفوظ باسمك")}</span><span className="sample" style={{ color: "var(--on-dark-muted)" }}>{t("SAMPLE", "تجريبي")}</span></div>
                 <div style={{ display: "flex", alignItems: "baseline", gap: 18, marginTop: 12, flexWrap: "wrap" }}>
-                  <CountUp to={total} decimals={3} className="gold-text shimmer num" style={{ fontFamily: "var(--serif)", fontSize: 96, fontWeight: 600, lineHeight: 1 }} />
+                  <CountUp to={total} decimals={3} className="gold-text shimmer num big-num xl" style={{ fontFamily: "var(--serif)", fontSize: 96, fontWeight: 600, lineHeight: 1 }} />
                   <span className="serif" style={{ fontSize: 34, color: "var(--pale-gold)" }}>{t("grams", "غرام")}</span>
                 </div>
                 <VaultValue grams={total} started={VAULT.startedValue} />

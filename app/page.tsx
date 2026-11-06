@@ -118,7 +118,7 @@ export default async function Home() {
             <Reveal className="ph zoom" style={{ position: "absolute", inset: "0 0 0 60px" }}><img src="/img/phone-suit.jpg" alt={t("A client in a suit holding a phone", "عميل ببدلة رسمية يحمل هاتفه")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "30% 50%" }} /></Reveal>
             <Reveal delay={0.35} y={60} className="app-card" style={{ left: 0, bottom: 70, width: 330, padding: "26px 28px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}><span className="eyebrow plain" style={{ color: "var(--muted)" }}>{t("Transfer sent", "تم التحويل")}</span><span className="chip chip-green">{t("Done", "مكتمل")}</span></div>
-              <div className="num" style={{ fontFamily: "var(--serif)", fontSize: 52, lineHeight: 1.1, marginTop: 14 }}><CountUp to={10} decimals={3} suffix={t(" g", " غ")} /></div>
+              <div className="num big-num" style={{ fontFamily: "var(--serif)", fontSize: 52, lineHeight: 1.1, marginTop: 14 }}><CountUp to={10} decimals={3} suffix={t(" g", " غ")} /></div>
               <div style={{ fontSize: 13, color: "var(--muted)" }}>{t("Gold 24K", "ذهب عيار 24")} · ≈ <LiveNum field="mid" times={10} /></div>
               <div className="hair" style={{ margin: "18px 0" }} />
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}><span className="av" style={{ background: "var(--maroon)", color: "var(--pale-gold)" }}>{t("S", "س")}</span><div><div style={{ fontWeight: 500 }}>{t("Sara A.", "سارة أ.")}</div><div style={{ fontSize: 12, color: "var(--muted)" }}>{t("Melody ID MG-20 917", "رقم ميلودي MG-20 917")}</div></div></div>

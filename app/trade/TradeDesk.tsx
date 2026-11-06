@@ -64,7 +64,7 @@ export function TradeDesk() {
             <div className="tf">{(["1D", "1W", "1M", "1Y"] as Range[]).map((r) => <button key={r} className={r === range ? "on" : ""} onClick={() => setRange(r)}>{ar ? RANGE_AR[r] ?? r : r}</button>)}</div>
           </div>
           <div style={{ display: "flex", alignItems: "baseline", gap: 16, marginTop: 18, flexWrap: "wrap" }}>
-            <span style={{ fontFamily: "var(--serif)", fontSize: 68, lineHeight: 1, fontWeight: 600 }}><LiveNum field="mid" className="gold-text shimmer" /></span>
+            <span className="big-num" style={{ fontFamily: "var(--serif)", fontSize: 68, lineHeight: 1, fontWeight: 600 }}><LiveNum field="mid" className="gold-text shimmer" /></span>
             {first && (() => { const pct = `${quote.mid >= first ? "+" : "−"}${Math.abs(((quote.mid - first) / first) * 100).toFixed(1)}%`; const color = quote.mid >= first ? "var(--up-on-dark)" : "#F3A6A6";
               return ar
                 ? <span style={{ color }}><span className="num">{pct}</span> {range === "1D" ? "اليوم" : range === "1W" ? "هذا الأسبوع" : range === "1M" ? "هذا الشهر" : "هذا العام"}</span>

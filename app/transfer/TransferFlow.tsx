@@ -110,7 +110,7 @@ export function TransferFlow() {
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           <Reveal delay={0.1} className="panel-dark dark-rows" style={{ padding: 32 }}>
             <span className="eyebrow plain" style={{ color: "var(--on-dark-muted)" }}>{t("Summary", "الملخص")}</span>
-            <div style={{ fontFamily: "var(--serif)", fontSize: 62, fontWeight: 600, lineHeight: 1.1, marginTop: 10 }}><Tween value={grams} format={(n) => g(n, lang)} className="gold-text shimmer num" style={ar ? RTL : undefined} /></div>
+            <div className="big-num" style={{ fontFamily: "var(--serif)", fontSize: 62, fontWeight: 600, lineHeight: 1.1, marginTop: 10 }}><Tween value={grams} format={(n) => g(n, lang)} className="gold-text shimmer num" style={ar ? RTL : undefined} /></div>
             <div style={{ fontSize: 13, color: "var(--on-dark-muted)" }}>{t("Gold 24K · 999.9", "ذهب عيار 24 · 999.9")}</div>
             <div style={{ marginTop: 20 }}>
               <div className="row"><span>{t("To", "إلى")}</span><span>{ar ? <>{contact.nameAr} · <span className="num">{contact.id}</span></> : <>{contact.name} · {contact.id}</>}</span></div>
