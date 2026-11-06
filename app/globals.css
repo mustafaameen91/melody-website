@@ -406,8 +406,9 @@ input.input-el { border: 0; outline: 0; background: transparent; width: 100%; mi
   .stats { grid-template-columns: 1fr !important; }
   .stat { border-inline-start: 0 !important; padding-inline-start: 0 !important; }
   .sec-head { flex-direction: column; align-items: flex-start; gap: 20px; }
-  .sec-head h2, h2 { font-size: 40px !important; }
-  h1 { font-size: 52px !important; }
+  .sec-head h2, h2 { font-size: 32px !important; }
+  h1 { font-size: 40px !important; }
+  .hero h1 { font-size: 34px !important; }
   .ticker .right, .ticker .hide-sm { display: none !important; }
   .ticker .wrap { gap: 14px; overflow-x: auto; white-space: nowrap; }
   .ftr .top { grid-template-columns: 1fr 1fr; }
