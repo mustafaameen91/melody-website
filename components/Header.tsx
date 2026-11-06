@@ -72,27 +72,25 @@ export function Header() {
                   <Link href="/vault" className="btn btn-gold btn-sm">{t("Open account", "افتح حساباً")}</Link>
                 </>
               )}
-              <button className="menu-btn" onClick={() => setMenu(true)} aria-label={t("Open menu", "فتح القائمة")}><Icon name="filter" size={24} /></button>
+              <button className="menu-btn" onClick={() => setMenu((m) => !m)} aria-expanded={menu} aria-label={menu ? t("Close menu", "إغلاق القائمة") : t("Open menu", "فتح القائمة")}><Icon name={menu ? "close" : "filter"} size={24} /></button>
             </div>
           </div>
         </header>
+        <AnimatePresence>
+          {menu && (
+            <>
+              <motion.div className="menu-dim" onClick={() => setMenu(false)} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }} />
+              <motion.nav className="mobile-menu" aria-label={t("Menu", "القائمة")} initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} transition={{ duration: 0.25, ease: "easeOut" }}>
+                {[...NAV, ...EXTRA].map(([h, en, ar]) => (
+                  <Link key={h} href={h} className={`m${isOn(h) ? " on" : ""}`}>{t(en, ar)}</Link>
+                ))}
+                <Link href="/vault" className="btn btn-gold m-cta">{auth ? t("My vault", "خزنتي") : t("Open account", "افتح حساباً")}</Link>
+                <button className="m-lang" lang={lang === "ar" ? "en" : "ar"} onClick={() => switchLang(lang === "ar" ? "en" : "ar")}>{lang === "ar" ? "English" : "العربية"}</button>
+              </motion.nav>
+            </>
+          )}
+        </AnimatePresence>
       </div>
-      <AnimatePresence>
-        {menu && (
-          <motion.div className="mobile-menu" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 30 }}>
-              <span className="brand"><Logo size={40} id="lg-menu" /><span className="brand-lock"><span className="brand-name" style={{ color: "var(--pale-gold)" }}>MELODY</span><span className="brand-sub">{t("Digital Gold Bank", "بنك الذهب الرقمي")}</span></span></span>
-              <button onClick={() => setMenu(false)} aria-label={t("Close menu", "إغلاق القائمة")} style={{ width: 44, height: 44 }}><Icon name="close" size={26} /></button>
-            </div>
-            {[...NAV, ...EXTRA].map(([h, en, ar], i) => (
-              <motion.span key={h} initial={{ opacity: 0, x: lang === "ar" ? 20 : -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.05 * i }}>
-                <Link href={h} className="m" style={{ display: "block" }}>{t(en, ar)}</Link>
-              </motion.span>
-            ))}
-            <button className="btn btn-line light" style={{ marginTop: 30, alignSelf: "flex-start" }} onClick={() => switchLang(lang === "ar" ? "en" : "ar")}>{lang === "ar" ? "English" : "العربية"}</button>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 }

@@ -7,8 +7,8 @@ import { getLang } from "@/lib/i18n-server";
 import { quoteAt } from "@/lib/pricing";
 import "./globals.css";
 
-const serif = Cormorant_Garamond({ subsets: ["latin"], weight: ["500", "600", "700"], style: ["normal", "italic"], variable: "--font-serif", display: "swap", adjustFontFallback: false });
-const sans = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700"], style: ["normal", "italic"], variable: "--font-sans", display: "swap", adjustFontFallback: false });
+const serif = Cormorant_Garamond({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--font-serif", display: "swap", adjustFontFallback: false });
+const sans = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-sans", display: "swap", adjustFontFallback: false });
 const arabic = IBM_Plex_Sans_Arabic({ subsets: ["arabic"], weight: ["400", "500", "600", "700"], variable: "--font-ar", display: "swap" });
 
 export async function generateMetadata(): Promise<Metadata> {
