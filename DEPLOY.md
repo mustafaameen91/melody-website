@@ -1,80 +1,50 @@
-# Deploying Melody to a Linux server (nginx)
+# Deploying Melody (melody.codility.tech)
 
-Tested layout: Ubuntu 22.04/24.04, Node.js 22, PM2 keeps the app running on `127.0.0.1:3050`, nginx serves it on ports 80/443.
+The server already has Node.js, PM2, nginx and certbot for its other apps. Melody runs in PM2 as `melody` on `127.0.0.1:3050`, and nginx serves it on ports 80/443.
 
 ```
-browser ──► nginx :80/:443 ──► Next.js (PM2) 127.0.0.1:3050
+browser ──► nginx :80/:443 ──► Next.js (PM2 "melody") 127.0.0.1:3050
 ```
 
-Domain: **melody.codility.tech**. In the DNS for `codility.tech`, add an **A record** for `melody` pointing at the server's IP before step 5.
+Needs Node.js 20 or newer (`node -v`).
 
-## 1. Install Node.js, PM2, nginx, git
+## First deploy
 
 ```bash
-sudo apt update
-sudo apt install -y nginx git
-curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
-sudo apt install -y nodejs
-sudo npm install -g pm2        # skip if PM2 is already installed
-```
-
-## 2. Get the code and build it
-
-```bash
-sudo mkdir -p /var/www && sudo chown $USER /var/www
+# 1. Get the code and build it
 cd /var/www
 git clone https://github.com/mustafaameen91/melody-website.git melody
 cd melody
 npm ci
 npm run build
-```
 
-If the repo is private, use a GitHub deploy key or a personal access token for the clone.
-
-## 3. Start the app with PM2
-
-```bash
+# 2. Start it in PM2
 pm2 start deploy/ecosystem.config.cjs
 pm2 save
-pm2 startup        # prints one sudo command — run it so Melody starts after a reboot
-```
+curl -I http://127.0.0.1:3050          # should return 200
 
-Check it: `curl -I http://127.0.0.1:3050` should return `200`.
-
-## 4. Configure nginx
-
-```bash
+# 3. nginx site
 sudo cp deploy/nginx-melody.conf /etc/nginx/sites-available/melody
 sudo ln -s /etc/nginx/sites-available/melody /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
-```
 
-## 5. HTTPS (free certificate)
-
-```bash
-sudo apt install -y certbot python3-certbot-nginx
+# 4. HTTPS
 sudo certbot --nginx -d melody.codility.tech
 ```
 
-Certbot edits the nginx file to add HTTPS and the HTTP→HTTPS redirect, and renews automatically.
+Certbot adds HTTPS and the HTTP→HTTPS redirect to the Melody nginx file only; the other sites are not touched.
 
-## 6. Firewall
+If the repo is private, clone with a GitHub deploy key or a personal access token.
 
-```bash
-sudo ufw allow OpenSSH
-sudo ufw allow 'Nginx Full'
-sudo ufw enable
-```
-
-Port 3050 stays closed to the outside — only nginx talks to it.
-
-## Updating the site later
+## Updating the site
 
 Push changes to GitHub, then on the server:
 
 ```bash
 cd /var/www/melody && ./deploy/deploy.sh
 ```
+
+It pulls, rebuilds and reloads only the `melody` process.
 
 ## Useful commands
 
@@ -85,5 +55,4 @@ cd /var/www/melody && ./deploy/deploy.sh
 | `pm2 restart melody` | Restart the app |
 | `sudo tail -f /var/log/nginx/error.log` | nginx errors |
 
-The server needs about 1 GB of RAM for `npm run build`. On a smaller server, add swap first:
-`sudo fallocate -l 2G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile`.
+To change the port, edit it in both `deploy/ecosystem.config.cjs` and `deploy/nginx-melody.conf`.
