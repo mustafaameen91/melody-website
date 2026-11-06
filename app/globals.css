@@ -30,8 +30,7 @@ body { margin: 0; background: var(--ivory); color: var(--ink); font-family: var(
 a { color: inherit; text-decoration: none; }
 h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; margin: 0; line-height: 1.12; letter-spacing: -0.02em; }
 em, i, cite, address, dfn { font-style: normal; }
-h1 em, h2 em, h3 em { font-weight: inherit; color: var(--maroon); }
-.dark h1 em, .dark h2 em, .dark h3 em, .photo h1 em, .photo h2 em { color: var(--pale-gold); }
+h1 em, h2 em, h3 em { font-weight: inherit; color: inherit; }
 p { margin: 0; }
 img { display: block; }
 .wrap { width: var(--wrap); margin: 0 auto; }
