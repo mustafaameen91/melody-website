@@ -1,9 +1,9 @@
 # Deploying Melody to a Linux server (nginx)
 
-Tested layout: Ubuntu 22.04/24.04, Node.js 22, PM2 keeps the app running on `127.0.0.1:3000`, nginx serves it on ports 80/443.
+Tested layout: Ubuntu 22.04/24.04, Node.js 22, PM2 keeps the app running on `127.0.0.1:3050`, nginx serves it on ports 80/443.
 
 ```
-browser ──► nginx :80/:443 ──► Next.js (PM2) 127.0.0.1:3000
+browser ──► nginx :80/:443 ──► Next.js (PM2) 127.0.0.1:3050
 ```
 
 Domain: **melody.codility.tech**. In the DNS for `codility.tech`, add an **A record** for `melody` pointing at the server's IP before step 5.
@@ -15,7 +15,7 @@ sudo apt update
 sudo apt install -y nginx git
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs
-sudo npm install -g pm2
+sudo npm install -g pm2        # skip if PM2 is already installed
 ```
 
 ## 2. Get the code and build it
@@ -39,14 +39,13 @@ pm2 save
 pm2 startup        # prints one sudo command — run it so Melody starts after a reboot
 ```
 
-Check it: `curl -I http://127.0.0.1:3000` should return `200`.
+Check it: `curl -I http://127.0.0.1:3050` should return `200`.
 
 ## 4. Configure nginx
 
 ```bash
 sudo cp deploy/nginx-melody.conf /etc/nginx/sites-available/melody
 sudo ln -s /etc/nginx/sites-available/melody /etc/nginx/sites-enabled/
-sudo rm -f /etc/nginx/sites-enabled/default
 sudo nginx -t && sudo systemctl reload nginx
 ```
 
@@ -67,7 +66,7 @@ sudo ufw allow 'Nginx Full'
 sudo ufw enable
 ```
 
-Port 3000 stays closed to the outside — only nginx talks to it.
+Port 3050 stays closed to the outside — only nginx talks to it.
 
 ## Updating the site later
 
