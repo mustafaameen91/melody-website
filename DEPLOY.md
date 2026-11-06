@@ -6,7 +6,7 @@ Tested layout: Ubuntu 22.04/24.04, Node.js 22, PM2 keeps the app running on `127
 browser ──► nginx :80/:443 ──► Next.js (PM2) 127.0.0.1:3000
 ```
 
-Replace `example.com` with the real domain everywhere below. Point the domain's **A record** at the server's IP before step 5.
+Domain: **melody.codility.tech**. In the DNS for `codility.tech`, add an **A record** for `melody` pointing at the server's IP before step 5.
 
 ## 1. Install Node.js, PM2, nginx, git
 
@@ -45,7 +45,6 @@ Check it: `curl -I http://127.0.0.1:3000` should return `200`.
 
 ```bash
 sudo cp deploy/nginx-melody.conf /etc/nginx/sites-available/melody
-sudo nano /etc/nginx/sites-available/melody          # set server_name to your domain
 sudo ln -s /etc/nginx/sites-available/melody /etc/nginx/sites-enabled/
 sudo rm -f /etc/nginx/sites-enabled/default
 sudo nginx -t && sudo systemctl reload nginx
@@ -55,7 +54,7 @@ sudo nginx -t && sudo systemctl reload nginx
 
 ```bash
 sudo apt install -y certbot python3-certbot-nginx
-sudo certbot --nginx -d example.com -d www.example.com
+sudo certbot --nginx -d melody.codility.tech
 ```
 
 Certbot edits the nginx file to add HTTPS and the HTTP→HTTPS redirect, and renews automatically.
