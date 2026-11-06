@@ -19,11 +19,11 @@ export default async function Home() {
       <section className="photo hero grain">
         <HeroSlider />
         <div className="shade" />
-        <div className="wrap" style={{ position: "relative", zIndex: 2, paddingTop: "clamp(190px, 24vh, 250px)" }}>
+        <div className="wrap hero-copy" style={{ position: "relative", zIndex: 2 }}>
           <FadeIn delay={0.1}><div className="eyebrow">{t("Investment gold · Baghdad", "الذهب الاستثماري · بغداد")}</div></FadeIn>
-          <RiseLines style={{ marginTop: 30 }} lines={lang === "ar" ? ["ذهبٌ حقيقي،", <span key="l2"><em>ملكك</em> بلمسة واحدة.</span>] : ["Real gold.", <span key="l2"><em>Yours</em> in</span>, "one tap."]} />
-          <FadeIn delay={0.75}><p className="lead" style={{ marginTop: 32, fontSize: 19, maxWidth: 500 }}>{t("Buy 999.9 fine gold at the live price, hold it fully insured in your name, and send it, sell it or take delivery whenever you choose.", "اشترِ ذهباً خالصاً عيار 999.9 بالسعر الحي، واحفظه مؤمَّناً بالكامل باسمك، ثم أرسله أو بِعه أو استلمه متى شئت.")}</p></FadeIn>
-          <FadeIn delay={0.95} style={{ display: "flex", gap: 16, marginTop: 44, flexWrap: "wrap" }}>
+          <RiseLines style={{ marginTop: 22 }} lines={lang === "ar" ? ["ذهبٌ حقيقي،", <span key="l2"><em>ملكك</em> بلمسة واحدة.</span>] : ["Real gold.", <span key="l2"><em>Yours</em> in</span>, "one tap."]} />
+          <FadeIn delay={0.75}><p className="lead" style={{ marginTop: 22, fontSize: 16, maxWidth: 440 }}>{t("Buy 999.9 fine gold at the live price, hold it fully insured in your name, and send it, sell it or take delivery whenever you choose.", "اشترِ ذهباً خالصاً عيار 999.9 بالسعر الحي، واحفظه مؤمَّناً بالكامل باسمك، ثم أرسله أو بِعه أو استلمه متى شئت.")}</p></FadeIn>
+          <FadeIn delay={0.95} style={{ display: "flex", gap: 16, marginTop: 32, flexWrap: "wrap" }}>
             <Link href="/vault" className="btn btn-gold">{t("Open an account", "افتح حساباً")}</Link>
             <Link href="/prices" className="btn btn-line">{t("See live prices", "شاهد الأسعار الحية")}</Link>
           </FadeIn>
