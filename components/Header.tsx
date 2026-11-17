@@ -54,7 +54,7 @@ export function Header() {
         </div>
         <header className={`hdr${over ? " over" : ""}${solid && over ? " scrolled" : ""}`}>
           <div className="wrap">
-            <Link href="/" className="brand" aria-label={t("Melody home", "الصفحة الرئيسية لميلودي")}><Logo size={46} id="lg-head" /><span className="brand-lock"><span className="brand-name">MELODY</span><span className="brand-sub">{t("Digital Gold Bank", "بنك الذهب الرقمي")}</span></span></Link>
+            <Link href="/" className="brand" aria-label={t("Melody home", "الصفحة الرئيسية لميلودي")}><Logo size={46} /><span className="brand-lock"><span className="brand-name">MELODY</span><span className="brand-sub">{t("Digital Gold Bank", "بنك الذهب الرقمي")}</span></span></Link>
             <nav className="nav" aria-label={t("Main", "القائمة الرئيسية")}>
               {NAV.map(([h, en, ar]) => <Link key={h} href={h} className={isOn(h) ? "on" : ""}>{t(en, ar)}</Link>)}
             </nav>

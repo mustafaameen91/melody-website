@@ -13,7 +13,7 @@ export async function Footer() {
     <footer className="ftr">
       <div className="wrap top">
         <div>
-          <Link href="/" className="brand"><Logo size={56} id="lg-foot" /><span className="brand-lock"><span className="brand-name">MELODY</span><span className="brand-sub">{t("Digital Gold Bank", "بنك الذهب الرقمي")}</span></span></Link>
+          <Link href="/" className="brand"><Logo size={56} /><span className="brand-lock"><span className="brand-name">MELODY</span><span className="brand-sub">{t("Digital Gold Bank", "بنك الذهب الرقمي")}</span></span></Link>
           <p style={{ marginTop: 26, fontSize: 14, maxWidth: 320, lineHeight: 1.8 }}>{t("Investment gold, bought at a live price, held in your name in an insured vault, and delivered or sold back whenever you choose.", "ذهب استثماري تشتريه بالسعر الحي، ويُحفظ باسمك في خزنة مؤمَّنة، وتستلمه أو تبيعه لنا متى شئت.")}</p>
           <div style={{ display: "flex", gap: 12, marginTop: 30, flexWrap: "wrap" }}>
             <span className="store"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.5 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-1.9-1.5-.2-3 .9-3.8.9s-2-.9-3.3-.8C6.1 7.1 4.5 8.1 3.7 9.7c-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.6-1-2.6-4.1zM14 5.2c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3z" /></svg><span><small>{t("DOWNLOAD ON THE", "حمّله من")}</small>App Store</span></span>

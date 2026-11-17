@@ -37,24 +37,8 @@ export function Icon({ name, size = 20, style, className = "ic" }: { name: strin
   return <svg className={className} viewBox="0 0 24 24" aria-hidden="true" style={{ width: size, height: size, ...style }} dangerouslySetInnerHTML={{ __html: ICONS[name] ?? "" }} />;
 }
 
-const LOGO_PATH = 'M366 450 L459 527 L459 575 L405 532 L405 665 L398 658 L366 632 Z M563 449 L563 500 L466 574 L466 523 Z M563 540 L563 632 L527 658 Q500 674 466 672 L466 655 L526 608 L527 596 L489 596 Z';
-
-export function Logo({ size = 50, id = "lg" }: { size?: number; id?: string }) {
-  const f = `url(#${id})`;
-  return (
-    <svg width={size} height={size} viewBox="222 320 480 480" aria-hidden="true">
-      <defs>
-        <linearGradient id={id} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#B47A34" />
-          <stop offset=".35" stopColor="#FADDBE" />
-          <stop offset=".6" stopColor="#E7AB58" />
-          <stop offset=".85" stopColor="#F4C17B" />
-          <stop offset="1" stopColor="#A8712F" />
-        </linearGradient>
-      </defs>
-      <circle cx="462" cy="560" r="236" fill="none" stroke={f} strokeWidth="12" />
-      <circle cx="462" cy="560" r="206" fill="none" stroke={f} strokeWidth="10" strokeDasharray="269.6 53.9" strokeDashoffset="-26.95" />
-      <path fill={f} d={LOGO_PATH} />
-    </svg>
-  );
+// The Melody mark: three ascending gold panels, the last one a mashrabiya lattice (from the brand identity guide).
+// `size` is the mark's height; it is wider than tall (1.24 : 1).
+export function Logo({ size = 50 }: { size?: number }) {
+  return <img src="/img/brand/melody-emblem.png" width={Math.round(size * 1.24)} height={size} alt="" aria-hidden="true" style={{ display: "block", flexShrink: 0 }} />;
 }
