@@ -1,4 +1,4 @@
-# Deploying Melody (melody.codility.tech)
+# Deploying Melody (melodygoldbank.com)
 
 The server already has Node.js, PM2, nginx and certbot for its other apps. Melody runs in PM2 as `melody` on `127.0.0.1:3050`, and nginx serves it on ports 80/443.
 
@@ -29,7 +29,7 @@ sudo ln -s /etc/nginx/sites-available/melody /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
 
 # 4. HTTPS
-sudo certbot --nginx -d melody.codility.tech
+sudo certbot --nginx -d melodygoldbank.com -d www.melodygoldbank.com
 ```
 
 Certbot adds HTTPS and the HTTP→HTTPS redirect to the Melody nginx file only; the other sites are not touched.
