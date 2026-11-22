@@ -552,3 +552,56 @@ html[dir="rtl"] {
   .hero .quote { position: relative; }
 }
 [dir="rtl"] .brand-sub { font-family: var(--font-ar), sans-serif; letter-spacing: 0; font-size: 13px; }
+
+/* ───────── Founders: organisation chart ─────────
+   Burgundy card for the founder, paper cards for the two branches, joined by thin gold lines. */
+.org { padding: 110px 0 140px; }
+.org-tree { display: flex; flex-direction: column; align-items: center; margin-top: 64px; }
+.org-node { position: relative; width: 100%; max-width: 380px; margin: 0 auto; padding: 40px 30px 36px; text-align: center; background: var(--paper); border: 1px solid var(--rule); box-shadow: 0 18px 40px rgba(42,10,14,0.07); }
+.org-node.top { background-color: var(--maroon); background-image: radial-gradient(120% 110% at 30% 0%, var(--maroon-lit) 0%, var(--maroon) 38%, var(--maroon-deep) 100%); max-width: 480px; padding: 48px 36px 42px; color: var(--on-dark); border-color: var(--gold-line); box-shadow: 0 24px 50px rgba(32,3,6,0.28); }
+.org-av { width: 120px; height: 120px; margin: 0 auto; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #fff; border: 2px solid var(--brand-gold); box-shadow: 0 0 0 6px rgba(220,165,62,0.14); }
+.org-node.top .org-av { width: 170px; height: 170px; }
+.org-av img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+.org-av.logo img { width: 70%; height: 70%; object-fit: contain; }
+.org-av.icon { background: linear-gradient(160deg, var(--maroon-lit), var(--maroon) 60%, var(--maroon-deep)); color: var(--pale-gold); }
+.org-role { display: block; margin-top: 24px; letter-spacing: 0.2em; line-height: 1.6; }
+.org-node.top .org-role { color: var(--pale-gold); }
+.org-name { font-size: 26px; margin-top: 10px; }
+.org-node.top .org-name { font-size: 34px; color: var(--on-dark); }
+.org-note { font-size: 14px; line-height: 1.6; color: var(--muted); margin-top: 10px; }
+.org-node.top .org-note { color: var(--on-dark-muted); font-size: 15px; }
+.org-stem { width: 1px; height: 56px; background: var(--gold); }
+.org-branches { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; width: 100%; max-width: 860px; padding-top: 56px; }
+.org-branches::before { content: ''; position: absolute; top: 0; inset-inline: calc(25% - 12px); height: 1px; background: var(--gold); }
+.org-branch { position: relative; display: flex; }
+.org-branch::before { content: ''; position: absolute; top: -56px; left: 50%; width: 1px; height: 56px; background: var(--gold); }
+.org-branch .org-node { height: 100%; }
+.org-branch .org-node::before { content: ''; position: absolute; top: -5px; left: 50%; width: 9px; height: 9px; margin-left: -4.5px; background: var(--brand-gold); transform: rotate(45deg); }
+[dir="rtl"] .org-role { letter-spacing: 0; text-transform: none; font-size: 13px; }
+@media (max-width: 700px) {
+  .org { padding: 64px 0 90px; }
+  .org-tree { margin-top: 40px; }
+  .org-node { padding: 26px 12px 24px; }
+  .org-node.top { padding: 34px 20px 30px; }
+  .org-av { width: 76px; height: 76px; box-shadow: 0 0 0 4px rgba(220,165,62,0.14); }
+  .org-av.icon .ic { width: 32px !important; height: 32px !important; }
+  .org-node.top .org-av { width: 128px; height: 128px; }
+  .org-role { margin-top: 16px; font-size: 9.5px; letter-spacing: 0.1em; }
+  [dir="rtl"] .org-role { font-size: 12px; }
+  .org-name { font-size: 17px !important; }
+  .org-node.top .org-name { font-size: 24px !important; }
+  .org-note { font-size: 12.5px; }
+  .org-node.top .org-note { font-size: 13.5px; }
+  .org-stem { height: 36px; }
+  .org-branches { gap: 14px; padding-top: 36px; }
+  .org-branch::before { top: -36px; height: 36px; }
+  .org-branches::before { inset-inline: calc(25% - 3.5px); }
+}
+
+/* Main menu has eight links: tighter spacing on wide screens, and the menu button takes over below 1320px */
+.nav { gap: 15px; font-size: 11px; letter-spacing: 0.1em; }
+.hdr .wrap { gap: 24px; }
+@media (max-width: 1320px) {
+  .nav, .hdr .tools .signin { display: none; }
+  .menu-btn { display: inline-flex; }
+}
