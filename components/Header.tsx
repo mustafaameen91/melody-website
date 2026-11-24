@@ -9,7 +9,7 @@ import { switchLang, useLang } from "./Lang";
 import { makeT } from "@/lib/i18n";
 
 const NAV = [
-  ["/", "Home", "الرئيسية"], ["/about", "About", "من نحن"], ["/founders", "Founders", "المؤسسون"], ["/gold-bars", "Gold bars", "سبائك الذهب"], ["/prices", "Live prices", "الأسعار الحية"],
+  ["/", "Home", "الرئيسية"], ["/about", "About", "من نحن"], ["/founders", "Founders", "المؤسسون"], ["/factories", "Factories", "المصانع"], ["/gold-bars", "Gold bars", "سبائك الذهب"], ["/prices", "Prices", "الأسعار الحية"],
   ["/trade", "Trade", "التداول"], ["/sell", "Sell to Melody", "البيع لميلودي"], ["/insights", "Insights", "التحليلات"],
 ] as const;
 const EXTRA = [["/vault", "My vault", "خزنتي"], ["/transfer", "Transfer gold", "نقل الذهب"], ["/help", "Help & contact", "المساعدة والتواصل"]] as const;
@@ -19,7 +19,7 @@ export function Header() {
   const path = usePathname();
   const lang = useLang();
   const t = makeT(lang);
-  const over = ["/", "/about", "/prices", "/gold-bars", "/sell", "/help"].includes(path);
+  const over = ["/", "/about", "/prices", "/gold-bars", "/sell", "/help", "/factories"].includes(path);
   const auth = ACCOUNT.includes(path);
   const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState(false);

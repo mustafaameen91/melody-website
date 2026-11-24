@@ -5,7 +5,7 @@ import { getT } from "@/lib/i18n-server";
 export async function Footer() {
   const { t } = await getT();
   const cols: [string, [string, string][]][] = [
-    [t("GOLD", "الذهب"), [[t("Gold bars", "سبائك الذهب"), "/gold-bars"], [t("Live prices", "الأسعار الحية"), "/prices"], [t("Trade gold", "تداول الذهب"), "/trade"], [t("Sell to Melody", "البيع لميلودي"), "/sell"], [t("Insights", "التحليلات"), "/insights"]]],
+    [t("GOLD", "الذهب"), [[t("Gold bars", "سبائك الذهب"), "/gold-bars"], [t("Factories", "المصانع"), "/factories"], [t("Live prices", "الأسعار الحية"), "/prices"], [t("Trade gold", "تداول الذهب"), "/trade"], [t("Sell to Melody", "البيع لميلودي"), "/sell"], [t("Insights", "التحليلات"), "/insights"]]],
     [t("YOUR ACCOUNT", "حسابك"), [[t("My vault", "خزنتي"), "/vault"], [t("Trade gold", "تداول الذهب"), "/trade"], [t("Transfer gold", "نقل الذهب"), "/transfer"], [t("Price alerts", "تنبيهات الأسعار"), "/prices#alerts"], [t("Help", "المساعدة"), "/help"]]],
     [t("MELODY", "ميلودي"), [[t("About us", "من نحن"), "/about"], [t("Founders", "المؤسسون"), "/founders"], [t("Vault & insurance", "الخزنة والتأمين"), "/about#promise"], [t("Insights", "التحليلات"), "/insights"], [t("Showroom", "صالة العرض"), "/about#showroom"], [t("Contact", "تواصل معنا"), "/help"]]],
   ];
